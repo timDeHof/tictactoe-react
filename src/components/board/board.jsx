@@ -1,6 +1,7 @@
 import React from "react"
 import "./board.css"
 import { Square } from "../square/square"
+import { Typography } from "@mui/material"
 
 export const Board = ({ xIsNext, squares, onPlay }) => {
   const handleClick = (i) => {
@@ -46,7 +47,9 @@ export const Board = ({ xIsNext, squares, onPlay }) => {
 
   return (
     <>
-      <div className='status'>{status}</div>
+      <Typography variant='body1' sx={{ textAlign: "center" }}>
+        {status}
+      </Typography>
 
       <div className='board-row'>
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />

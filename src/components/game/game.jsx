@@ -1,5 +1,15 @@
 import React, { useState } from "react"
 import { Board } from "../board/board"
+import {
+  Grid,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  Paper,
+  Typography,
+} from "@mui/material"
+import ReplayIcon from "@mui/icons-material/Replay"
 import "./game.css"
 
 export const Game = () => {
@@ -19,27 +29,38 @@ export const Game = () => {
   }
 
   const moves = history.map((squares, move) => {
-    let description
-    if (move > 0) {
-      description = `You are at move #${move}`
-    } else {
-      description = "Go to game Start"
-    }
+    let description = move > 0 ? `You are at move #${move}` : "Go to game Start"
+
     return (
-      <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
-      </li>
+      <ListItem key={move} disablePadding>
+        <ListItemButton component='button' onClick={() => jumpTo(move)}>
+          <ListItemIcon sx={{ color: "inherit", position: "absolute", left: -6 }}>
+            <ReplayIcon fontSize='small' />
+          </ListItemIcon>
+          {description}
+        </ListItemButton>
+      </ListItem>
     )
   })
 
   return (
     <div className='game'>
-      <div className='game-board'>
-        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
-      </div>
-      <div className='game-info'>
-        <ol>{moves}</ol>
-      </div>
+      <Paper elevation={3} sx={{ mx: "auto", py: 3, minWidth: 400 }}>
+        <Typography variant='h3' sx={{ textAlign: "center" }}>
+          Tic-Tac-Toe
+        </Typography>
+        <Grid container justifyContent='center' alignContent='center' spacing={4}>
+          <Grid item>
+            <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+          </Grid>
+          <Grid justifyContent='center' item>
+            <Typography variant='body2' sx={{ textAlign: "center" }}>
+              Log
+            </Typography>
+            <List>{moves}</List>
+          </Grid>
+        </Grid>
+      </Paper>
     </div>
   )
 }
