@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 import { Board } from "../board/board"
 import {
+  Container,
   Grid,
   List,
   ListItem,
   ListItemButton,
   ListItemIcon,
-  Paper,
   Typography,
 } from "@mui/material"
 import ReplayIcon from "@mui/icons-material/Replay"
@@ -45,22 +45,31 @@ export const Game = () => {
 
   return (
     <div className='game'>
-      <Paper elevation={3} sx={{ mx: "auto", py: 3, minWidth: 400 }}>
-        <Typography variant='h3' sx={{ textAlign: "center" }}>
+      <Container
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          mx: "auto",
+          py: 3,
+          minWidth: 400,
+          minHeight: 400,
+        }}
+      >
+        <Typography variant='h3' sx={{ m: 0, textAlign: "center" }}>
           Tic-Tac-Toe
         </Typography>
-        <Grid container justifyContent='center' alignContent='center' spacing={4}>
+        <Grid container justifyContent='center' my='auto' alignContent='center' spacing={4}>
           <Grid item>
             <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
           </Grid>
           <Grid justifyContent='center' item>
-            <Typography variant='body2' sx={{ textAlign: "center" }}>
+            <Typography variant='body1' sx={{ textAlign: "center" }}>
               Log
             </Typography>
             <List>{moves}</List>
           </Grid>
         </Grid>
-      </Paper>
+      </Container>
     </div>
   )
 }

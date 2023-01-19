@@ -1,7 +1,7 @@
 import React from "react"
 import "./board.css"
 import { Square } from "../square/square"
-import { Typography } from "@mui/material"
+import { Typography, Box } from "@mui/material"
 
 export const Board = ({ xIsNext, squares, onPlay }) => {
   const handleClick = (i) => {
@@ -50,22 +50,11 @@ export const Board = ({ xIsNext, squares, onPlay }) => {
       <Typography variant='body1' sx={{ textAlign: "center" }}>
         {status}
       </Typography>
-
-      <div className='board-row'>
-        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
-      </div>
-      <div className='board-row'>
-        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
-      </div>
-      <div className='board-row'>
-        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
-      </div>
+      <Box sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap", my: "auto", width: 200 }}>
+        {squares.map((square, index) => (
+          <Square key={index} value={square} onSquareClick={() => handleClick(index)} />
+        ))}
+      </Box>
     </>
   )
 }
