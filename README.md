@@ -1,21 +1,66 @@
 # Tic Tac Toe
 
-A Tic-Tac-Toe game built using the React.beta docs
+A classic game of Tic Tac Toe built using ReactJS and Material-UI. 
+
+## Installation
+
+To install and run the game, follow these steps:
+
+1. Clone the repository:
+```
+git clone https://github.com/your-username/tic-tac-toe.git
+```
+2. Install the dependencies:
+```
+npm install
+```
+3. Start the development server:
+```
+npm start
+```
+The game should now be running at [http://localhost:3000](http://localhost:3000)
+
+## How to play
+
+The game is played on a 3x3 board. Players take turns placing their mark (X or O) on an empty square. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
+
+## Features
+
+- Responsive design using Material-UI
+- Game state is managed using the `useState` hook
+- Game logic is implemented using JavaScript
+- Detects the winner or a draw
 
 ## To Dos
 
 ---
 
 - [x] For the current move only, show “You are at move #…” instead of a button
-
 - [x] Rewrite `Board` to use two loops to make the squares instead of hardcoding them.
-
 - [ ] Add a toggle button that lets you sort the moves in either ascending or descending order.
-
 - [ ] When someone wins, highlight the three squares that caused the win (and when no one
       wins,display a message about the result being a draw)
-
 - [ ] Display the location for each move in the format (col, row) in the move history list.
+- [ ] Add a reset button to start a new game
+- [ ] Add a scoreboard to keep track of the number of wins for each player
+- [ ] Add the ability to play against the computer
+- [ ] Add option to change the board size to play a bigger game.
+
+## Contributing
+
+If you're interested in contributing to the project, feel free to submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Material-UI for the beautiful and functional UI components
+- ReactJS for the powerful and flexible framework
+
+Hope you enjoy the game!
+
 
 ## Getting Started with Create React App
 
