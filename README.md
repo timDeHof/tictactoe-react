@@ -33,8 +33,6 @@ The game is played on a 3x3 board. Players take turns placing their mark (X or O
 
 ## To Dos
 
----
-
 - [x] For the current move only, show “You are at move #…” instead of a button
 - [x] Rewrite `Board` to use two loops to make the squares instead of hardcoding them.
 - [ ] Add a toggle button that lets you sort the moves in either ascending or descending order.
@@ -61,6 +59,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Hope you enjoy the game!
 
+---
 
 ## Getting Started with Create React App
 
